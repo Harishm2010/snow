@@ -44,14 +44,4 @@ resource "snowflake_table" "demo_table" {
     type    = "NUMBER"
     comment = "Description for column2"
   }
-
-  constraint {
-    type    = "PRIMARY KEY"
-    columns = "column1"
-  }
-
-  constraint {
-    type    = "UNIQUE"
-    columns = "column2"
-  }
 }
