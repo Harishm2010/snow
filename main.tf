@@ -48,12 +48,12 @@ resource "snowflake_table" "example_table" {
 
   constraint {
     type    = "PRIMARY KEY"
-    columns = ["column1"]
+    columns = "column1"
   }
 
   constraint {
     type    = "UNIQUE"
-    columns = ["column2"]
+    columns = "column2"
   }
 }
 
