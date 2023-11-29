@@ -46,14 +46,3 @@ resource "snowflake_table" "example_table" {
     comment  = "Description for column2"
   }
 
-  constraint {
-    type    = "PRIMARY KEY"
-    columns = "column1"
-  }
-
-  constraint {
-    type    = "UNIQUE"
-    columns = "column2"
-  }
-}
-
