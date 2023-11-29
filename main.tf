@@ -45,4 +45,5 @@ resource "snowflake_table" "example_table" {
     type     = "NUMBER"
     comment  = "Description for column2"
   }
+}
 
