@@ -29,6 +29,13 @@ resource "snowflake_schema" "demo_schema" {
 }
 resource "snowflake_file_format" "csv_file_format" {
   name    = "CSV_FILE_FORMAT"
-  type    = "CSV"
+  database = snowflake_database.demo_db.name
   comment = "File format for CSV files"
+
+  type               = "CSV"
+  field_optionally_enclosed_by = "\""
+  record_delimiter   = "\n"
+  field_delimiter    = ","
+  skip_header        = 1
+  -- Add any additional file format configurations as needed
 }
