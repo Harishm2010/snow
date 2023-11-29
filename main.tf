@@ -27,3 +27,8 @@ resource "snowflake_schema" "demo_schema" {
   name     = "DEMO_SCHEMA"
   comment  = "Schema for Snowflake Terraform demo"
 }
+resource "snowflake_file_format" "csv_file_format" {
+  name    = "CSV_FILE_FORMAT"
+  type    = "CSV"
+  comment = "File format for CSV files"
+}
