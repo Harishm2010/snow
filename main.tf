@@ -55,5 +55,5 @@ resource "snowflake_file_format" "csv_file_format" {
   record_delimiter   = "\n"
   field_delimiter    = ","
   skip_header        = 1
-  -- Add any additional file format configurations as needed
+  # Add any additional file format configurations as needed
 }
