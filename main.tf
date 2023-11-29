@@ -45,11 +45,6 @@ resource "snowflake_table" "demo_table" {
     comment = "Description for column2"
   }
 }
-resource "snowflake_schema" "demo_schema" {
-  database = snowflake_database.demo_db.name
-  name     = "DEMO_SCHEMA"
-  comment  = "Schema for Snowflake Terraform demo"
-}
 resource "snowflake_file_format" "csv_file_format" {
   name    = "CSV_FILE_FORMAT"
   database = snowflake_database.demo_db.name
@@ -60,4 +55,5 @@ resource "snowflake_file_format" "csv_file_format" {
   record_delimiter   = "\n"
   field_delimiter    = ","
   skip_header        = 1
+  -- Add any additional file format configurations as needed
 }
