@@ -27,3 +27,33 @@ resource "snowflake_schema" "demo_schema1" {
   name     = "DEMO_SCHEMA1"
   comment  = "Schema for Snowflake Terraform demo"
 }
+
+resource "snowflake_table" "example_table" {
+  database = snowflake_database.demo_db.name
+  schema   = snowflake_schema.demo_schema1.name
+  name     = "EXAMPLE_TABLE"
+  comment  = "Table for Snowflake Terraform demo"
+
+  column {
+    name     = "column1"
+    type     = "TEXT"
+    comment  = "Description for column1"
+  }
+
+  column {
+    name     = "column2"
+    type     = "NUMBER"
+    comment  = "Description for column2"
+  }
+
+  constraint {
+    type    = "PRIMARY KEY"
+    columns = ["column1"]
+  }
+
+  constraint {
+    type    = "UNIQUE"
+    columns = ["column2"]
+  }
+}
+
